@@ -35,11 +35,18 @@ from plugins import plugin_lcnl
 from plugins import plugin_marlin
 from plugins import plugin_zip
 from plugins import plugin_jpeg_xl
+from plugins import plugin_golomb
 
 if __name__ == '__main__':
     all_codecs = []
     all_families = []
 
+    golomb_family = enb.aanalysis.TaskFamily(label="Golomb")
+    for c in (plugin_golomb.golomb_codec.golomb(),):
+        all_codecs.append(c)
+        golomb_family.add_task(c.name, f"{c.label}")
+    all_families.append(golomb_family)
+    
     jpeg_ls_family = enb.aanalysis.TaskFamily(label="JPEG-LS")
     for c in (plugin_jpeg.jpeg_codecs.JPEG_LS(max_error=0) for m in [0]):
         all_codecs.append(c)
