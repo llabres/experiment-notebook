@@ -1,4 +1,5 @@
 from . import plugin_ccsds122
+from . import plugin_golomb
 from . import plugin_fapec
 from . import plugin_flif
 from . import plugin_fse
