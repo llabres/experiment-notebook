@@ -21,4 +21,4 @@ class golomb(icompression.WrapperCodec, icompression.LosslessCodec):
 
     @property
     def label(self):
-        return "golomb" 
+        return "Golomb" 
